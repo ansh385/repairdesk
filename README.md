@@ -1,18 +1,35 @@
 # RepairDesk
 
-Responsive pre-launch website for an independent smartphone repair marketplace.
+<p align="center">
+  <img src="assets/repairdesk-readme-hero.svg" alt="RepairDesk — Repair. Reconnected. Obsidian monochrome brand illustration" width="100%">
+</p>
+
+<p align="center">
+  <strong>Find your repair partner.</strong><br>
+  An independent smartphone repair marketplace concept.
+</p>
+
+---
+
+## Brand direction
+
+RepairDesk uses an **Obsidian Black** visual identity: near-black surfaces, restrained greys and crisp off-white typography. The custom artwork uses simple device, precision-tool and trust-shield motifs to communicate the product without relying on generic stock photography.
 
 ## Business model
+
 RepairDesk is a platform connecting customers with independent repair providers. It does not employ technicians, own repair shops, or operate a delivery fleet. Customers should browse verified provider profiles, compare terms, request quotes and choose a provider. Providers independently handle diagnosis, repair, warranty and any agreed logistics.
 
 ## Current website capabilities
+
 - Responsive public landing page.
+- Custom monochrome SVG brand mark, favicon and homepage illustrations.
 - Customer repair enquiry form is a visual prototype only; it does not transmit or store submissions.
 - Independent provider application form is a visual prototype only; it does not transmit or store submissions.
 - Free pilot pricing: ₹0 provider signup, ₹0 customer platform fee and ₹0 platform commission during the initial pilot.
 - Provider directory is intentionally empty until real businesses are verified. No fabricated profiles or ratings.
 
 ## Important: not a live marketplace yet
+
 This is currently a static website. It does not yet have:
 - provider/customer accounts or automatic provider registration;
 - shared database or provider profile management;
@@ -25,7 +42,14 @@ The initial pilot is free for customers and providers: ₹0 joining fee, ₹0 su
 Those features require a backend, database, authentication, provider onboarding workflow, payment-provider approval and operational/legal policies. A form submission is not currently transmitted, stored, or treated as a confirmed booking or public provider listing.
 
 ## Before operating
-Verify provider identity and capabilities; agree platform commission and provider terms; define who is responsible for device custody, logistics, repair warranty, cancellations, refunds and disputes; use condition photos, accessory checklists and timestamped handover records; publish privacy terms. Never request device passcodes, banking credentials or OTPs.
+
+Verify provider identity and capabilities; agree provider terms; define who is responsible for device custody, logistics, repair warranty, cancellations, refunds and disputes; use condition photos, accessory checklists and timestamped handover records; publish privacy terms. Never request device passcodes, banking credentials or OTPs.
 
 ## Hosting
-Static site. Render deploys from the GitHub main branch.
+
+Static site. Render deploys from the GitHub `main` branch.
+
+## Project links
+
+- **Website:** https://repairdesk-lun8.onrender.com/
+- **Repository:** https://github.com/ansh385/repairdesk
