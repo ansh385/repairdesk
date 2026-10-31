@@ -7,9 +7,8 @@ RepairDesk is a platform connecting customers with independent repair providers.
 
 ## Current website capabilities
 - Responsive public landing page.
-- Customer repair enquiry form opens WhatsApp with a prefilled message.
-- Independent provider application form opens WhatsApp with a prefilled message.
-- Forms do not silently submit or store data; the visitor reviews and sends the WhatsApp message.
+- Customer repair enquiry form is a visual prototype only; it does not transmit or store submissions.
+- Independent provider application form is a visual prototype only; it does not transmit or store submissions.
 - Provider directory is intentionally empty until real businesses are verified. No fabricated profiles or ratings.
 
 ## Important: not a live marketplace yet
@@ -20,7 +19,7 @@ This is currently a static website. It does not yet have:
 - searchable provider directory or real-time customer provider selection;
 - booking/order tracking, in-app quote approvals, payments, payouts, reviews or dispute handling.
 
-Those features require a backend, database, authentication, provider onboarding workflow and operational/legal policies. A WhatsApp enquiry is not a confirmed booking or a public provider listing.
+Those features require a backend, database, authentication, provider onboarding workflow and operational/legal policies. A form submission is not currently transmitted, stored, or treated as a confirmed booking or public provider listing.
 
 ## Before operating
 Verify provider identity and capabilities; agree platform commission and provider terms; define who is responsible for device custody, logistics, repair warranty, cancellations, refunds and disputes; use condition photos, accessory checklists and timestamped handover records; publish privacy terms. Never request device passcodes, banking credentials or OTPs.
