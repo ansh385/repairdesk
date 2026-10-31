@@ -63,14 +63,14 @@ async function loadProviders(){
 }
 $('searchBtn').addEventListener('click',loadProviders);$('refreshBtn').addEventListener('click',loadProviders);
 $('q').addEventListener('keydown',e=>{if(e.key==='Enter')loadProviders()});$('area').addEventListener('keydown',e=>{if(e.key==='Enter')loadProviders()});
-$('phone').addEventListener('input',e=>{e.target.value=e.target.value.replace(/\\D/g,'').slice(0,10)});
+$('phone').addEventListener('input',e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,10)});
 $('providerForm').addEventListener('submit',async e=>{
  e.preventDefault();
  const form=e.currentTarget,btn=form.querySelector('button[type=submit]'),note=$('formNote');
  const payload=Object.fromEntries(new FormData(form).entries());delete payload.consent;
- payload.business=String(payload.business||'').trim();payload.area=String(payload.area||'').trim();payload.phone=String(payload.phone||'').replace(/\\D/g,'');payload.experience=String(payload.experience||'').trim();
+ payload.business=String(payload.business||'').trim();payload.area=String(payload.area||'').trim();payload.phone=String(payload.phone||'').replace(/\D/g,'');payload.experience=String(payload.experience||'').trim();
  if(!payload.business||!payload.area||!payload.service){note.textContent='Enter your shop name, location and choose a repair service.';return}
- if(!/^[6-9]\\d{9}$/.test(payload.phone)){note.textContent='Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.';$('phone').focus();return}
+ if(!/^[6-9]\d{9}$/.test(payload.phone)){note.textContent='Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.';$('phone').focus();return}
  if(!form.elements.consent.checked){note.textContent='Please confirm that you are authorised to publish this business contact number.';return}
  btn.disabled=true;btn.textContent='Publishing…';note.textContent='Creating your public shop profile…';
  try{const r=await fetch(API+'/provider-applications',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await r.json();if(!r.ok)throw new Error(data.error||'Could not publish profile.');
