@@ -1,0 +1,2 @@
+CREATE TABLE customer_enquiries (id BIGSERIAL PRIMARY KEY, model TEXT NOT NULL, issue TEXT NOT NULL, area TEXT NOT NULL, phone TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'new', created_at TIMESTAMPTZ NOT NULL DEFAULT NOW());
+CREATE TABLE provider_applications (id BIGSERIAL PRIMARY KEY, business TEXT NOT NULL, contact TEXT NOT NULL, area TEXT NOT NULL, phone TEXT NOT NULL, service TEXT NOT NULL, experience TEXT, status TEXT NOT NULL DEFAULT 'pending', created_at TIMESTAMPTZ NOT NULL DEFAULT NOW());
