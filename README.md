@@ -1,18 +1,29 @@
-# RepairDesk launch site
+# RepairDesk
 
-Static pre-launch landing page for the Ahmedabad smartphone repair pilot.
+Responsive pre-launch website for an independent smartphone repair marketplace.
 
-## Contact flow
-- Customer and repair-partner forms validate the entered fields and open WhatsApp to +91 91064 32474 with a pre-filled message.
-- The visitor must review and press Send in WhatsApp. No form data is silently stored or sent.
-- This is an enquiry channel, not a booking engine or payment system.
+## Business model
+RepairDesk is a platform connecting customers with independent repair providers. It does not employ technicians, own repair shops, or operate a delivery fleet. Customers should browse verified provider profiles, compare terms, request quotes and choose a provider. Providers independently handle diagnosis, repair, warranty and any agreed logistics.
 
-## Before accepting paid repair orders
-- Verify repair partners and delivery partners.
-- Agree in writing on pricing, commissions, diagnostic/pickup charges, repair scope and warranty responsibility.
-- Implement device check-in/check-out records, condition photos, accessory inventory, timestamps and handover acknowledgements.
-- Publish privacy, cancellation, refund, dispute and warranty terms; obtain local legal/tax advice.
-- Do not request device passwords, banking credentials or OTPs.
+## Current website capabilities
+- Responsive public landing page.
+- Customer repair enquiry form opens WhatsApp with a prefilled message.
+- Independent provider application form opens WhatsApp with a prefilled message.
+- Forms do not silently submit or store data; the visitor reviews and sends the WhatsApp message.
+- Provider directory is intentionally empty until real businesses are verified. No fabricated profiles or ratings.
+
+## Important: not a live marketplace yet
+This is currently a static website. It does not yet have:
+- provider/customer accounts or automatic provider registration;
+- shared database or provider profile management;
+- admin verification dashboard;
+- searchable provider directory or real-time customer provider selection;
+- booking/order tracking, in-app quote approvals, payments, payouts, reviews or dispute handling.
+
+Those features require a backend, database, authentication, provider onboarding workflow and operational/legal policies. A WhatsApp enquiry is not a confirmed booking or a public provider listing.
+
+## Before operating
+Verify provider identity and capabilities; agree platform commission and provider terms; define who is responsible for device custody, logistics, repair warranty, cancellations, refunds and disputes; use condition photos, accessory checklists and timestamped handover records; publish privacy terms. Never request device passcodes, banking credentials or OTPs.
 
 ## Hosting
-This folder is a static site. Deploy only to a host whose current terms permit commercial business websites. The connected Vercel account is on the Hobby plan, so this deployment was not published there.
+Static site. Render deploys from the GitHub main branch.
