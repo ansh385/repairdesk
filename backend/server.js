@@ -42,7 +42,7 @@ app.get('/api/providers', async (req,res) => {
 });
 
 app.post('/api/provider-applications', async (req,res) => {
- const business=clean(req.body?.business,120), area=clean(req.body?.area,120), phone=clean(req.body?.phone,10), service=clean(req.body?.service,120), experience=clean(req.body?.experience,80);
+ const business=clean(req.body?.business,120), area=clean(req.body?.area,120), phone=String(req.body?.phone ?? '').replace(/\\D/g,'').slice(0,10), service=clean(req.body?.service,120), experience=clean(req.body?.experience,80);
  if (!business || !area || !validPhone(phone) || !service) return res.status(400).json({error:'Enter a business name, service area, service and valid 10-digit WhatsApp number.'});
  try {
   const q=await pool.query(`INSERT INTO provider_applications(business,contact,area,phone,service,experience,status)
