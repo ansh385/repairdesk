@@ -13,7 +13,7 @@
 
 ## Brand direction
 
-RepairDesk uses an **Obsidian Black** visual identity: near-black surfaces, restrained greys and crisp off-white typography. The custom artwork uses simple device, precision-tool and trust-shield motifs to communicate the product without relying on generic stock photography.
+RepairDesk uses an **Obsidian Black** visual identity with crisp off-white typography and a restrained **Electric Blue (`#9BB7FF`)** accent. Blue is reserved for small highlights, active states and key details; it does not compete with the black-and-white foundation. The custom artwork uses simple device, precision-tool and trust-shield motifs to communicate the product without relying on generic stock photography.
 
 ## Business model
 
