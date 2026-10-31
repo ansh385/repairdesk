@@ -20,7 +20,7 @@ This is currently a static website. It does not yet have:
 - searchable provider directory or real-time customer provider selection;
 - booking/order tracking, in-app quote approvals, payment processing, automatic split settlements, payouts, reviews or dispute handling.
 
-The initial pilot is free for customers and providers: ₹0 joining fee, ₹0 subscription and ₹0 RepairDesk commission. No customer money is collected by RepairDesk, no platform fee is charged, and no provider payout is processed. Customers and providers must agree directly on repair charges and payment arrangements. Real automatic split settlements are not implemented and would require an approved payment partner, merchant/provider onboarding and verified settlement destinations; a mobile number alone is not enough.
+The initial pilot is free for customers and providers: ₹0 joining fee, ₹0 subscription and ₹0 RepairDesk commission. No customer money is collected by RepairDesk, no platform fee is charged, and no provider payout is processed. Customers pay independent repair providers directly. RepairDesk does not collect, hold, split or transfer repair payments. Real automatic split settlements are not implemented and would require an approved payment partner, merchant/provider onboarding and verified settlement destinations; a mobile number alone is not enough.
 
 Those features require a backend, database, authentication, provider onboarding workflow, payment-provider approval and operational/legal policies. A form submission is not currently transmitted, stored, or treated as a confirmed booking or public provider listing.
 
