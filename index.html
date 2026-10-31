@@ -33,7 +33,7 @@ header{position:sticky;top:0;z-index:10;background:#080808ed;backdrop-filter:blu
 <div class="field"><label for="business">SHOP / BUSINESS NAME</label><input id="business" name="business" maxlength="120" required placeholder="Your repair shop"></div>
 <div class="field"><label for="areaInput">SHOP LOCATION / SERVICE AREA</label><input id="areaInput" name="area" maxlength="120" required placeholder="Area, city"></div>
 <div class="field"><label for="service">REPAIR SERVICES</label><select id="service" name="service" required><option value="">Choose primary service</option><option>Android smartphone repair</option><option>iPhone repair</option><option>All smartphone brands</option><option>Board-level / advanced repair</option><option>Screen and battery replacement</option><option>Other smartphone repair</option></select></div>
-<div class="field"><label for="phone">BUSINESS WHATSAPP NUMBER</label><input id="phone" name="phone" required inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile number"></div>
+<div class="field"><label for="phone">BUSINESS WHATSAPP NUMBER</label><input id="phone" name="phone" type="tel" required inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10-digit mobile number"></div>
 <div class="field"><label for="experience">EXPERIENCE (OPTIONAL)</label><input id="experience" name="experience" maxlength="80" placeholder="e.g. 5 years"></div>
 <label class="consent"><input type="checkbox" name="consent" required> I confirm I represent this business, have permission to publish this contact number, and agree that this public listing can be contacted by customers.</label>
 <button class="btn" type="submit">Publish my shop profile ↗</button><p class="form-note" id="formNote" role="status" aria-live="polite"></p></form></div></div></section>
@@ -63,10 +63,15 @@ async function loadProviders(){
 }
 $('searchBtn').addEventListener('click',loadProviders);$('refreshBtn').addEventListener('click',loadProviders);
 $('q').addEventListener('keydown',e=>{if(e.key==='Enter')loadProviders()});$('area').addEventListener('keydown',e=>{if(e.key==='Enter')loadProviders()});
+$('phone').addEventListener('input',e=>{e.target.value=e.target.value.replace(/\\D/g,'').slice(0,10)});
 $('providerForm').addEventListener('submit',async e=>{
- e.preventDefault();if(!e.currentTarget.reportValidity())return;
+ e.preventDefault();
  const form=e.currentTarget,btn=form.querySelector('button[type=submit]'),note=$('formNote');
  const payload=Object.fromEntries(new FormData(form).entries());delete payload.consent;
+ payload.business=String(payload.business||'').trim();payload.area=String(payload.area||'').trim();payload.phone=String(payload.phone||'').replace(/\\D/g,'');payload.experience=String(payload.experience||'').trim();
+ if(!payload.business||!payload.area||!payload.service){note.textContent='Enter your shop name, location and choose a repair service.';return}
+ if(!/^[6-9]\\d{9}$/.test(payload.phone)){note.textContent='Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.';$('phone').focus();return}
+ if(!form.elements.consent.checked){note.textContent='Please confirm that you are authorised to publish this business contact number.';return}
  btn.disabled=true;btn.textContent='Publishing…';note.textContent='Creating your public shop profile…';
  try{const r=await fetch(API+'/provider-applications',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await r.json();if(!r.ok)throw new Error(data.error||'Could not publish profile.');
  form.reset();note.textContent='Your shop is now listed. Listing ID: RD-'+String(data.provider.id).padStart(5,'0')+'. Customers can contact your business directly.';await loadProviders();$('directory').scrollIntoView({behavior:'smooth'});
